@@ -28,4 +28,71 @@ class He(Element, PeriodI, GroupXVIII):
     pass
 
 
-__all__ = ['GroupXVIII', 'He']
+class Rn(Element, PeriodVI, GroupXVIII):
+    @property
+    def atomic_number(self):
+        return 86
+
+    @property
+    def atomic_mass(self):
+        return 222.0176
+
+    @property
+    def electronegativity(self):
+        return 2.2
+
+    @property
+    def common_isotope(self):
+        return 222
+
+    @property
+    def max_isotope(self):
+        return 222
+
+    @property
+    def min_isotope(self):
+        return 222
+
+    @property
+    def common_valences(self):
+        return (0, 1)
+
+    @property
+    def valences_exeptions(self):
+        return ()
+
+
+class Og(Element, PeriodVII, GroupXVIII):
+    @property
+    def atomic_number(self):
+        return 118
+
+    @property
+    def atomic_mass(self):
+        return 294
+
+    @property
+    def electronegativity(self):
+        return None
+
+    @property
+    def common_isotope(self):
+        return 294
+
+    @property
+    def max_isotope(self):
+        return 294
+
+    @property
+    def min_isotope(self):
+        return 294
+
+    @property
+    def common_valences(self):
+        return (0, 1)
+
+    @property
+    def valences_exeptions(self):
+        return ()
+
+__all__ = ['GroupXVIII', 'He', 'Rn', 'Og']
