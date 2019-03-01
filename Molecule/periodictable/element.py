@@ -126,3 +126,10 @@ class Element(ABC):
         """
         elements heaviest isotope on Earth
         """
+
+    @property
+    @abstractmethod
+    def atomic_mass(self) -> float:
+        """
+        elements atomic mass
+        """
