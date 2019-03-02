@@ -83,7 +83,7 @@ class Element(ABC):
 
     @property
     @abstractmethod
-    def atomic_number(self):
+    def atomic_number(self) -> int:
         """
         Element number
         """
@@ -125,4 +125,18 @@ class Element(ABC):
     def max_isotope(self) -> int:
         """
         elements heaviest isotope on Earth
+        """
+
+    @property
+    @abstractmethod
+    def electronegativity(self) -> float:
+        """
+        electronegativity of atom
+        """
+
+    @property
+    @abstractmethod
+    def atomic_mass(self) -> float:
+        """
+        elements atomic mass
         """
