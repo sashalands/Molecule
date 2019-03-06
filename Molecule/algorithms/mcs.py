@@ -16,25 +16,46 @@
 #  You should have received a copy of the GNU Lesser General Public License
 #  along with this program; if not, see <https://www.gnu.org/licenses/>.
 #
+from collections import defaultdict
+from itertools import product, permutations, combinations
+from typing import Dict, List, Set, Hashable
+
+
+def clique(graph: Dict[Hashable, Set[Hashable]]) -> List[Hashable]:
+    clique_atoms = set()
+    roots = sorted(graph, key=lambda x: len(graph[x]), reverse=True)
+    for i in roots:
+        neighbours = graph[i] - clique_atoms
+        if not neighbours:
+            continue
+        neighbours_root = neighbours.copy()
+        neighbours_root.add(i)
+        for j in neighbours:
+            n_n = set(graph[j])
+            n_n.add(j)
+            if not n_n.issuperset(neighbours_root):
+                break
+        else:
+            yield list(neighbours_root)
+            clique_atoms.update(neighbours_root)
 
 
 class MCS:
-    def clique(self):
-        clique = []
-        clique_atoms = set()
-        roots = sorted(self._bonds, key=lambda x: len(self._bonds[x]), reverse=True)
-        for i in roots:
-            neighbours = self._bonds[i].keys() - clique_atoms
-            if not neighbours:
-                continue
-            neighbours_root = neighbours.copy()
-            neighbours_root.add(i)
-            for j in neighbours:
-                n_n = set(self._bonds[j])
-                n_n.add(j)
-                if not n_n.issuperset(neighbours_root):
-                    break
-            else:
-                clique.append(list(neighbours_root))
-                clique_atoms.update(neighbours_root)
-        return clique
+    def mcs_mapping(self, other) -> Dict[int, int]:
+        p = {}
+        a1 = defaultdict(set)
+        for (s, v1), (o, v2) in product(self._atoms.items(), other._atoms.items()):
+            if v1 == v2:
+                p[(s, o)] = set()
+                a1[s].add(o)
+        for (s1, v1), (s2, v2) in combinations(a1.items(), 2):
+            for o1, o2 in product(v1, v2):
+                if o1 != o2:
+                    k1 = (s1, o1)
+                    k2 = (s2, o2)
+                    p[k1].add(k2)
+                    p[k2].add(k1)
+        print(next(clique(p)))
+
+
+
