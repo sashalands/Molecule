@@ -51,7 +51,7 @@ class F(Element, PeriodII, GroupXVII):
 
     @property
     def common_valences(self):
-        return (1, 2),
+        return (1, 1),
 
     @property
     def valences_exceptions(self):
@@ -85,15 +85,18 @@ class Cl(Element, PeriodIII, GroupXVII):
 
     @property
     def common_valences(self):
-        return (1, 2),
+        return (1, 1),
 
     @property
     def valences_exceptions(self):
-        return ((0, 6, ((2, 'O'), (2, 'O'), (1, 'O'))),
-                (0, 4, ((2, 'O'), (1, 'O'))),
-                (0, 8, ((2, 'O'), (2, 'O'), (2, 'O'), (1, 'O'))),
-                (0, 5, ((2, 'O'), (2, 'O'))),
-                (-1, 7, ((2, 'O'), (2, 'O'), (1, 'O'))))
+        return ((0, 1, ((2, 'O'), (2, 'O'), (1, 'O'))),
+                (0, 1, ((2, 'O'), (1, 'O'))),
+                (0, 1, ((2, 'O'), (2, 'O'), (2, 'O'), (1, 'O'))),
+                (0, 2, ((2, 'O'), (2, 'O'))),
+                (-1, 2, ((2, 'O'), (2, 'O'), (1, 'O'))),
+                (0, 1, ((1, 'F'),)),
+                (0, 1, ((1, 'F'), (1, 'F'), (1, 'F'))),
+                (0, 1, ((1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'))))
 
 
 class Br(Element, PeriodIV, GroupXVII):
@@ -127,9 +130,12 @@ class Br(Element, PeriodIV, GroupXVII):
 
     @property
     def valences_exceptions(self):
-        return ((0, 6, ((2, 'O'), (2, 'O'), (1, 'O'))),
-                (0, 4, ((2, 'O'), (1, 'O'))),
-                (0, 8, ((2, 'O'), (2, 'O'), (2, 'O'), (1, 'O'))))
+        return ((0, 1, ((2, 'O'), (2, 'O'), (1, 'O'))),
+                (0, 1, ((2, 'O'), (1, 'O'))),
+                (0, 1, ((2, 'O'), (2, 'O'), (2, 'O'), (1, 'O'))),
+                (0, 1, ((1, 'F'),)),
+                (0, 1, ((1, 'F'), (1, 'F'), (1, 'F'))),
+                (0, 1, ((1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'))))
 
 
 __all__ = ['GroupXVII', 'F', 'Cl', 'Br']
