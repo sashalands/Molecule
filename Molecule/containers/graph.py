@@ -27,7 +27,7 @@ class Graph(Components, MCS):
     def add_atom(self, atom, number=None):
         if number is None:
             number = max(self._atoms, default=0) + 1
-        elif isinstance(number, int):
+        elif not isinstance(number, int):
             raise TypeError('integer required')
         elif number in self._atoms:
             raise ValueError('number already exists')

@@ -54,7 +54,7 @@ class H(Element, PeriodI, GroupI):
         return (0, 2), (1, 1)
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
@@ -88,7 +88,7 @@ class Li(Element, PeriodII, GroupI):
         return (0, 1), (1, 1)
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
@@ -122,7 +122,7 @@ class Na(Element, PeriodIII, GroupI):
         return (0, 1), (1, 1)
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
@@ -156,7 +156,7 @@ class K(Element, PeriodIV, GroupI):
         return (0, 1), (1, 1)
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
@@ -190,7 +190,7 @@ class Rb(Element, PeriodV, GroupI):
         return (0, 1), (1, 1)
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
@@ -224,7 +224,7 @@ class Cs(Element, PeriodVI, GroupI):
         return (0, 1), (1, 1)
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
@@ -258,7 +258,7 @@ class Fr(Element, PeriodVII, GroupI):
         return (0, 1), (1, 1)
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
