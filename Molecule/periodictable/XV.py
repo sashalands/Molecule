@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 #  Copyright 2019 Ramil Nugmanov <stsouko@live.ru>
+#  Copyright 2019 Alexander Nikanshin <17071996sasha@gmail.com>
 #  This file is part of Molecule.
 #
 #  Molecule is free software; you can redistribute it and/or modify
@@ -57,7 +58,8 @@ class N(Element, PeriodII, GroupXV):
     def valences_exceptions(self):
         return ((0, 1, ((1, 'O'),)),
                 (0, 1, ((2, 'O'),)),
-                (0, 1, ((2, 'O'), (2, 'O'))))
+                (0, 1, ((2, 'O'), (2, 'O'))),
+                (0, 1, ((2, 'O'), (2, 'O'), (1, 'O'))))
 
 
 class Bi(Element, PeriodVI, GroupXVII):
@@ -129,4 +131,4 @@ class Mc(Element, PeriodVII, GroupXVII):
         return ()
 
 
-__all__ = ['GroupXVII', 'N', 'Bi', 'Mc']
+__all__ = ['GroupXV', 'N', 'Bi', 'Mc']
