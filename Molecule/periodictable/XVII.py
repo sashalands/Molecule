@@ -127,7 +127,7 @@ class Br(Element, PeriodIV, GroupXVII):
 
     @property
     def common_valences(self):
-        return (1, 2),
+        return (1, 1),
 
     @property
     def valences_exceptions(self):
