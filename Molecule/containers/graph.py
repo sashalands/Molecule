@@ -17,6 +17,7 @@
 #  along with this program; if not, see <https://www.gnu.org/licenses/>.
 #
 from ..algorithms import Components, MCS
+from ..periodictable.element import Element
 
 
 class Graph(Components, MCS):
@@ -25,9 +26,11 @@ class Graph(Components, MCS):
         self._atoms = {}
 
     def add_atom(self, atom, number=None):
+        if not isinstance(atom, Element):
+            raise TypeError('Molecule.periodictable Element required')
         if number is None:
             number = max(self._atoms, default=0) + 1
-        elif isinstance(number, int):
+        elif not isinstance(number, int):
             raise TypeError('integer required')
         elif number in self._atoms:
             raise ValueError('number already exists')

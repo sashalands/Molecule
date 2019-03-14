@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 #
 #  Copyright 2019 Ramil Nugmanov <stsouko@live.ru>
+#  Copyright 2019 Dayana Bashirova <dayana.bashirova@yandex.ru>
+#  Copyright 2019 Tagir Akhmetshin <tagirshin@gmail.com>
 #  This file is part of Molecule.
 #
 #  Molecule is free software; you can redistribute it and/or modify
@@ -20,132 +22,68 @@ from .element import Element
 from .periods import *
 
 
-class GroupI:
+class GroupXVI:
     pass
 
 
-class H(Element, PeriodI, GroupI):
+class O(Element, PeriodII, GroupXVI):
     @property
     def atomic_number(self):
-        return 1
+        return 8
 
     @property
     def atomic_mass(self):
-        return 1.00784
+        return 15.999
 
     @property
     def electronegativity(self):
-        return 2.2
+        return 3.44
 
     @property
     def common_isotope(self):
-        return 1
+        return 16
 
     @property
     def max_isotope(self):
-        return 3
-
-    @property
-    def min_isotope(self):
-        return 1
-
-    @property
-    def common_valences(self):
-        return (0, 2), (1, 1)
-
-    @property
-    def valences_exceptions(self):
-        return ()
-
-
-class Li(Element, PeriodII, GroupI):
-    @property
-    def atomic_number(self):
-        return 3
-
-    @property
-    def atomic_mass(self):
-        return 6.938
-
-    @property
-    def electronegativity(self):
-        return 0.98
-
-    @property
-    def common_isotope(self):
-        return 6
-
-    @property
-    def max_isotope(self):
-        return 13
-
-    @property
-    def min_isotope(self):
-        return 3
-
-    @property
-    def common_valences(self):
-        return (0, 1), (1, 1)
-
-    @property
-    def valences_exceptions(self):
-        return ()
-
-
-class Na(Element, PeriodIII, GroupI):
-    @property
-    def atomic_number(self):
-        return 11
-
-    @property
-    def atomic_mass(self):
-        return 22.989
-
-    @property
-    def electronegativity(self):
-        return 0.93
-
-    @property
-    def common_isotope(self):
-        return 23
-
-    @property
-    def max_isotope(self):
-        return 37
-
-    @property
-    def min_isotope(self):
         return 18
 
     @property
+    def min_isotope(self):
+        return 16
+
+    @property
     def common_valences(self):
-        return (0, 1), (1, 1)
+        return (2, 1),
 
     @property
     def valences_exceptions(self):
-        return ()
+        return ((0, 2, ((1, 'H'),)), (0, 2, ((1, 'N'),)), (0, 2, ((1, 'O'),)), (-2, 1, ()),
+                (-1, 1, ((1, 'H'),)), (-1, 1, ((1, 'O'),)),
+               ((-1, 1, ((1, 'S'),)), (-1, 1, ((1, 'Se'),)), (-1, 1, ((1, 'C'),))))
+    # First three tuples are exceptions when oxygen is radical, for example: hydroxyl radical or ozone
+    # Other are examples of oxygen anion for example in acids or ozone
 
 
-class K(Element, PeriodIV, GroupI):
+class S(Element, PeriodIII, GroupXVI):
     @property
     def atomic_number(self):
-        return 19
+        return 16
 
     @property
     def atomic_mass(self):
-        return 39.0983
+        return 32.059
 
     @property
     def electronegativity(self):
-        return 0.82
+        return 2.58
 
     @property
     def common_isotope(self):
-        return 39
+        return 32
 
     @property
     def max_isotope(self):
-        return 56
+        return 36
 
     @property
     def min_isotope(self):
@@ -153,113 +91,119 @@ class K(Element, PeriodIV, GroupI):
 
     @property
     def common_valences(self):
-        return (0, 1), (1, 1)
+        return (2, 1), (4, 1), (6, 1)
 
     @property
     def valences_exceptions(self):
-        return ()
+        return ((-1, 1, ((2, 'O'), (2, 'O'), (1, 'O'))), (-1, 1, ((2, 'O'), (2, 'O'), (1, 'S'))),
+                (-1, 1, ((1, 'H'), )), (-2, 1, ()), (-1, 1, ((1, 'C'), )), (-1, 1, ((2, 'O'), (2, 'O'), (1, 'C'))))
 
 
-class Rb(Element, PeriodV, GroupI):
+class Se(Element, PeriodIV, GroupXVI):
     @property
     def atomic_number(self):
-        return 37
+        return 34
 
     @property
     def atomic_mass(self):
-        return 85.4678
+        return 78.96
 
     @property
     def electronegativity(self):
-        return 0.82
+        return 2.55
 
     @property
     def common_isotope(self):
-        return 85
+        return 80
 
     @property
     def max_isotope(self):
-        return 103
+        return 82
 
     @property
     def min_isotope(self):
-        return 71
+        return 72
 
     @property
     def common_valences(self):
-        return (0, 1), (1, 1)
+        return (2, 1), (4, 1), (6, 1)
 
     @property
     def valences_exceptions(self):
         return ()
 
 
-class Cs(Element, PeriodVI, GroupI):
+class Po(Element, PeriodVI, GroupXVI):
     @property
     def atomic_number(self):
-        return 55
+        return 84
 
     @property
     def atomic_mass(self):
-        return 132.90545
+        return 209
 
     @property
     def electronegativity(self):
-        return 0.79
+        return 2.3
 
     @property
     def common_isotope(self):
-        return 133
+        return 209
 
     @property
     def max_isotope(self):
-        return 151
+        return 210
 
     @property
     def min_isotope(self):
-        return 112
+        return 206
 
     @property
     def common_valences(self):
-        return (0, 1), (1, 1)
+        return (0, 1), (2, 1)
 
     @property
     def valences_exceptions(self):
-        return ()
+        return ((0, 1, ((2, 'O'), (2, 'O'), (2, 'O'))),
+                (0, 1, ((2, 'O'), (2, 'O'))),
+                (0, 1, ((1, 'Cl'), (1, 'Cl'), (1, 'Cl'), (1, 'Cl'))),
+                (0, 1, ((1, 'Br'), (1, 'Br'), (1, 'Br'), (1, 'Br'))),
+                (0, 1, ((1, 'I'), (1, 'I'), (1, 'I'), (1, 'I'))),
+                (0, 1, ((1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'))))
 
 
-class Fr(Element, PeriodVII, GroupI):
+class Lv(Element, PeriodVII, GroupXVI):
     @property
     def atomic_number(self):
-        return 87
+        return 116
 
     @property
     def atomic_mass(self):
-        return 223.0197
+        return 293
 
     @property
     def electronegativity(self):
-        return 0.7
+        return None
 
     @property
     def common_isotope(self):
-        return 223
+        return 293
 
     @property
     def max_isotope(self):
-        return 233
+        return 293
 
     @property
     def min_isotope(self):
-        return 199
+        return 293
 
     @property
     def common_valences(self):
-        return (0, 1), (1, 1)
+        return ()
 
     @property
     def valences_exceptions(self):
         return ()
 
 
-__all__ = ['GroupI', 'H', 'Li', 'Na', 'K', 'Rb', 'Cs', 'Fr']
+__all__ = ['GroupXVI', 'O', 'S', 'Se', 'Po', 'Lv']

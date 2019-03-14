@@ -17,6 +17,7 @@
 #  along with this program; if not, see <https://www.gnu.org/licenses/>.
 #
 from abc import ABC, abstractmethod
+from itertools import chain
 from typing import Optional, Tuple
 
 
@@ -30,10 +31,10 @@ class Element(ABC):
         :param multiplicity: multiplicity of atom
         """
         if isinstance(charge, int):
-            if self.min_charge <= charge <= self.max_charge:
+            if not charge or charge in (x[0] for x in self.valences_exceptions):
                 self.__charge = charge
             else:
-                raise ValueError('charge should be in range of {} to {}'.format(self.min_charge, self.max_charge))
+                raise ValueError('invalid charge')
         else:
             raise TypeError('integer required')
 
@@ -50,12 +51,12 @@ class Element(ABC):
                 raise TypeError('integer required')
 
         if multiplicity is None:
-            self.__multiplicity = multiplicity
+            self.__multiplicity = self.common_valences[0][1]
         elif isinstance(multiplicity, int):
-            if 1 <= multiplicity <= self.max_multiplicity:
+            if multiplicity in (x[1] for x in chain(self.common_valences, self.valences_exceptions)):
                 self.__multiplicity = multiplicity
             else:
-                raise ValueError('multiplicity should be in range of 1 to {}'.format(self.max_multiplicity))
+                raise ValueError('invalid multiplicity')
         else:
             raise TypeError('integer required')
 
