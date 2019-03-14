@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 #  Copyright 2019 Ramil Nugmanov <stsouko@live.ru>
-#  Copyright 2019 Tagir Akhmetshin <tagirshin@gmail.com>
+#  Copyright 2019 Alexander Nikanshin <17071996sasha@gmail.com>
 #  This file is part of Molecule.
 #
 #  Molecule is free software; you can redistribute it and/or modify
@@ -25,38 +25,118 @@ class GroupXVII:
     pass
 
 
-class Ts(Element, PeriodVII, GroupXVII):
+class F(Element, PeriodII, GroupXVII):
     @property
     def atomic_number(self):
-        return 117
+        return 9
 
     @property
     def atomic_mass(self):
-        return 294
+        return 18.998403
 
     @property
     def electronegativity(self):
-        return None
+        return 3.98
 
     @property
     def common_isotope(self):
-        return 294
+        return 19
 
     @property
     def max_isotope(self):
-        return 294
+        return 19
 
     @property
     def min_isotope(self):
-        return 294
+        return 19
 
     @property
     def common_valences(self):
-        return ()
+        return (1, 1),
 
     @property
     def valences_exceptions(self):
         return ()
 
 
-__all__ = ['GroupXVII', 'Ts']
+class Cl(Element, PeriodIII, GroupXVII):
+    @property
+    def atomic_number(self):
+        return 17
+
+    @property
+    def atomic_mass(self):
+        return 35.450
+
+    @property
+    def electronegativity(self):
+        return 3.16
+
+    @property
+    def common_isotope(self):
+        return 35
+
+    @property
+    def max_isotope(self):
+        return 37
+
+    @property
+    def min_isotope(self):
+        return 35
+
+    @property
+    def common_valences(self):
+        return (1, 1),
+
+    @property
+    def valences_exceptions(self):
+        return ((0, 1, ((2, 'O'), (2, 'O'), (1, 'O'))),
+                (0, 1, ((2, 'O'), (1, 'O'))),
+                (0, 1, ((2, 'O'), (2, 'O'), (2, 'O'), (1, 'O'))),
+                (0, 2, ((2, 'O'), (2, 'O'))),
+                (-1, 2, ((2, 'O'), (2, 'O'), (1, 'O'))),
+                (0, 1, ((1, 'F'),)),
+                (0, 1, ((1, 'F'), (1, 'F'), (1, 'F'))),
+                (0, 1, ((1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'))))
+
+
+class Br(Element, PeriodIV, GroupXVII):
+    @property
+    def atomic_number(self):
+        return 35
+
+    @property
+    def atomic_mass(self):
+        return 79.905
+
+    @property
+    def electronegativity(self):
+        return 2.96
+
+    @property
+    def common_isotope(self):
+        return 79
+
+    @property
+    def max_isotope(self):
+        return 81
+
+    @property
+    def min_isotope(self):
+        return 79
+
+    @property
+    def common_valences(self):
+        return (1, 1),
+
+    @property
+    def valences_exceptions(self):
+        return ((0, 1, ((2, 'O'), (2, 'O'), (1, 'O'))),
+                (0, 1, ((2, 'O'), (1, 'O'))),
+                (0, 1, ((2, 'O'), (2, 'O'), (2, 'O'), (1, 'O'))),
+                (0, 1, ((1, 'F'),)),
+                (0, 1, ((1, 'F'), (1, 'F'), (1, 'F'))),
+                (0, 1, ((1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'))))
+
+
+__all__ = ['GroupXVII', 'F', 'Cl', 'Br']
