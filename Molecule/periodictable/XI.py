@@ -2,6 +2,7 @@
 #
 #  Copyright 2019 Ramil Nugmanov <stsouko@live.ru>
 #  Copyright 2019 Alexander Nikanshin <17071996sasha@gmail.com>
+#  Copyright 2019 Tagir Akhmetshin <tagirshin@gmail.com>
 #  This file is part of Molecule.
 #
 #  Molecule is free software; you can redistribute it and/or modify
@@ -61,7 +62,7 @@ class Cu(Element, PeriodIV, GroupXI):
                 (-2, 1, ((1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'))),  # Cu(OH)4^2-
                 (-4, 1, ((1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'))),  # Cu(OH)6^4-
                 (-2, 1, ((1, 'Cl'), (1, 'Cl'), (1, 'Cl'), (1, 'Cl'))),  # CuCl4^2-
-                (-1, 1, ((1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'))))  # Cu(CN)4^1-
+                (-2, 1, ((1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'))))  # Cu(CN)4^2-
 
 
 class Ag(Element, PeriodV, GroupXI):
