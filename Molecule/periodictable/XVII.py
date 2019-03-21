@@ -140,4 +140,38 @@ class Br(Element, PeriodIV, GroupXVII):
                 (0, 1, ((1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'))))
 
 
-__all__ = ['GroupXVII', 'F', 'Cl', 'Br']
+class Ts(Element, PeriodVII, GroupXVII):
+    @property
+    def atomic_number(self):
+        return 117
+
+    @property
+    def atomic_mass(self):
+        return 294
+
+    @property
+    def electronegativity(self):
+        return None
+
+    @property
+    def common_isotope(self):
+        return 294
+
+    @property
+    def max_isotope(self):
+        return 294
+
+    @property
+    def min_isotope(self):
+        return 294
+
+    @property
+    def common_valences(self):
+        return ()
+
+    @property
+    def valences_exceptions(self):
+        return ()
+
+
+__all__ = ['GroupXVII', 'F', 'Cl', 'Br', 'Ts']
