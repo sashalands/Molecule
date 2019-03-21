@@ -2,6 +2,8 @@
 #
 #  Copyright 2019 Ramil Nugmanov <stsouko@live.ru>
 #  Copyright 2019 Alexander Nikanshin <17071996sasha@gmail.com>
+#  Copyright 2019 Tagir Akhmetshin <tagirshin@gmail.com>
+#  This file is part of Molecule.
 #
 #  Molecule is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU Lesser General Public License as published by
