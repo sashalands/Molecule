@@ -53,7 +53,7 @@ class V(Element, PeriodIV, GroupV):
 
     @property
     def common_valences(self):
-        return (5, 1), (3, 1)
+        return (0, 1), (3, 1), (5, 1)
 
     @property
     def valences_exceptions(self):
@@ -89,7 +89,7 @@ class Nb(Element, PeriodV, GroupV):
 
     @property
     def common_valences(self):
-        return (5, 1),
+        return (0, 1), (5, 1)
 
     @property
     def valences_exceptions(self):
@@ -125,7 +125,7 @@ class Ta(Element, PeriodVI, GroupV):
 
     @property
     def common_valences(self):
-        return (5, 1), (3, 1)
+        return (0, 1), (3, 1), (5, 1)
 
     @property
     def valences_exceptions(self):
