@@ -122,7 +122,6 @@ class MCS:
                             p[k1].add(k2)
                             p[k2].add(k1)
         mapping = {}
-
         for c in find_cliques(p):
            mapping = dict(c)
 
