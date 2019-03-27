@@ -62,22 +62,36 @@ def clique(graph: Dict[Hashable, Set[Hashable]]) -> Iterator[List[Hashable]]:
 
 class MCS:
     def mcs_mapping(self, other) -> Dict[int, int]:
-        p = {}
-        a1 = defaultdict(set)
-        for (s, v1), (o, v2) in product(self._atoms.items(), other._atoms.items()):
-            if v1 == v2:
-                p[(s, o)] = set()
-                a1[s].add(o)
-        for (s1, v1), (s2, v2) in combinations(a1.items(), 2):
-            for o1, o2 in product(v1, v2):
-                if o1 != o2:
-                    k1 = (s1, o1)
-                    k2 = (s2, o2)
-                    p[k1].add(k2)
-                    p[k2].add(k1)
+        product_graph = {}
+        atoms_combinations = defaultdict(set)
+
+        for (self_num, self_atom), (other_num, other_atom) in product(self._atoms.items(), other._atoms.items()):
+            if self_atom == other_atom:
+                product_graph[(self_num, other_num)] = set()
+                atoms_combinations[self_num].add(other_num)
+
+        for (self_num_1, set_1), (self_num_2, set_2) in combinations(atoms_combinations.items(), 2):
+            bond1 = self._bonds[self_num_1].get(self_num_2)
+            if not bond1:
+                for other_num_1, other_num_2 in product(set_1, set_2):
+                    if other_num_1 != other_num_2:
+                        node1 = (self_num_1, other_num_1)
+                        node2 = (self_num_2, other_num_2)
+                        product_graph[node1].add(node2)
+                        product_graph[node2].add(node1)
+            else:
+                for other_num_1, other_num_2 in product(set_1, set_2):
+                    if other_num_1 != other_num_2:
+                        bond2 = other._bonds[other_num_1].get(other_num_2)
+                        if not bond2 or bond1 == bond2:
+                            node1 = (self_num_1, other_num_1)
+                            node2 = (self_num_2, other_num_2)
+                            product_graph[node1].add(node2)
+                            product_graph[node2].add(node1)
+
         mapping = {}
-        for c in clique(p):
-            if len(c) > len(mapping) and all(self._bonds[s1].get(s2) == other._bonds[o1].get(o2)
-                                             for (s1, o1), (s2, o2) in combinations(c, 2)):
-                mapping = dict(c)
+
+        for cliq in clique(product_graph):
+            mapping = dict(cliq)
+
         return mapping
