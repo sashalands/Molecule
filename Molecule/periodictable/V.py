@@ -57,7 +57,7 @@ class V(Element, PeriodIV, GroupV):
 
     @property
     def valences_exceptions(self):
-        return ((0, 1, ((1, 'F'), (1, 'F'))),
+        return ((0, 2, ((1, 'F'), (1, 'F'))),
                 (0, 1, ((2, 'O'), (2, 'O'))),
                 (-4, 1, ((1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'))))  # V(CN)6^4-
 
@@ -89,12 +89,12 @@ class Nb(Element, PeriodV, GroupV):
 
     @property
     def common_valences(self):
-        return (0, 6), (5, 1)
+        return (0, 5), (5, 1)
 
     @property
     def valences_exceptions(self):
-        return ((0, 1, ((1, 'Br'), (1, 'Br'))),
-                (0, 1, ((1, 'F'), (1, 'F'), (1, 'F'))),
+        return ((0, 3, ((1, 'Br'), (1, 'Br'))),
+                (0, 2, ((1, 'F'), (1, 'F'), (1, 'F'))),
                 (0, 1, ((1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'))))
 
 
