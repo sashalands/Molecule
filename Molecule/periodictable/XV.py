@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 #  Copyright 2019 Ramil Nugmanov <stsouko@live.ru>
+#  Copyright 2019 Alexander Nikanshin <17071996sasha@gmail.com>
 #  Copyright 2019 Tagir Akhmetshin <tagirshin@gmail.com>
 #  This file is part of Molecule.
 #
@@ -23,6 +24,53 @@ from .periods import *
 
 class GroupXV:
     pass
+
+
+class N(Element, PeriodII, GroupXV):
+    @property
+    def atomic_number(self):
+        return 7
+
+    @property
+    def atomic_mass(self):
+        return 14.00643
+
+    @property
+    def electronegativity(self):
+        return 3.04
+
+    @property
+    def common_isotope(self):
+        return 14
+
+    @property
+    def max_isotope(self):
+        return 15
+
+    @property
+    def min_isotope(self):
+        return 14
+
+    @property
+    def common_valences(self):
+        return (3, 1),
+
+    @property
+    def valences_exceptions(self):
+        return ((1, 1, ((1, 'O'), (3, 'N'))),  # N#N+O-
+                (0, 2, ((2, 'O'),)),  # NO
+                (0, 1, ((2, 'O'), (2, 'O'))),  # NO2
+                (1, 1, ((2, 'O'), (1, 'O'))),  # NO2
+                (1, 1, ((2, 'O'), (1, 'O'), (1, 'O'))),  # N2O5
+                (0, 1, ((1, 'C'), (2, 'C'), (2, 'O'))),
+                (1, 1, ((1, 'C'), (2, 'C'), (1, 'O'))),
+                (0, 1, ((1, 'C'), (2, 'O'), (2, 'O'))),
+                (1, 1, ((1, 'C'), (1, 'O'), (2, 'O'))),
+                (0, 1, ((1, 'C'), (2, 'O'), (1, 'C'), (1, 'C'))),
+                (1, 1, ((1, 'C'), (1, 'O'), (1, 'C'), (1, 'C'))),
+                (0, 1, ((1, 'C'), (2, 'O'), (1, 'H'), (1, 'C'))),
+                (1, 1, ((1, 'C'), (1, 'O'), (1, 'H'), (1, 'C'))))
+
 
 
 class P(Element, PeriodIII, GroupXV):
@@ -127,4 +175,68 @@ class Sb(Element, PeriodIII, GroupXV):
         return ()
 
 
-__all__ = ['GroupXV', 'P', 'As', 'Sb']
+class Bi(Element, PeriodVI, GroupXV):
+    @property
+    def atomic_number(self):
+        return 83
+
+    @property
+    def atomic_mass(self):
+        return 208.9804
+
+    @property
+    def electronegativity(self):
+        return 2.02
+
+    @property
+    def common_isotope(self):
+        return 209
+
+    @property
+    def max_isotope(self):
+        return 210
+
+    @property
+    def min_isotope(self):
+        return 205
+
+    @property
+    def common_valences(self):
+        return (3, 1),
+
+    @property
+    def valences_exceptions(self):
+        return ((0, 1, ((2, 'O'),)),
+                (0, 1, ((2, 'O'), (2, 'O'), (1, 'O'))))
+
+
+class Mc(Element, PeriodVII, GroupXV):
+    @property
+    def atomic_number(self):
+        return 115
+
+    @property
+    def atomic_mass(self):
+        return 289
+
+    @property
+    def electronegativity(self):
+        return None
+
+    @property
+    def common_isotope(self):
+        return 289
+
+    @property
+    def max_isotope(self):
+        return 289
+
+    @property
+    def min_isotope(self):
+        return 289
+
+    @property
+    def common_valences(self):
+        return ()
+
+__all__ = ['GroupXV', 'N', 'P', 'As', 'Sb', 'Bi', 'Mc']
