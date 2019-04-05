@@ -57,9 +57,9 @@ class V(Element, PeriodIV, GroupV):
 
     @property
     def valences_exceptions(self):
-        return ((0, 2, ((1, 'F'), (1, 'F'))),
-                (0, 1, ((2, 'O'), (2, 'O'))),
-                (-4, 1, ((1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'))))  # V(CN)6^4-
+        return ((0, 4, ((1, 'F'), (1, 'F'))),
+                (0, 2, ((2, 'O'), (2, 'O'))),
+                (-4, 4, ((1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'))))  # V(CN)6^4-
 
 
 class Nb(Element, PeriodV, GroupV):
@@ -93,9 +93,9 @@ class Nb(Element, PeriodV, GroupV):
 
     @property
     def valences_exceptions(self):
-        return ((0, 3, ((1, 'Br'), (1, 'Br'))),
-                (0, 2, ((1, 'F'), (1, 'F'), (1, 'F'))),
-                (0, 1, ((1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'))))
+        return ((0, 4, ((1, 'Br'), (1, 'Br'))),
+                (0, 3, ((1, 'F'), (1, 'F'), (1, 'F'))),
+                (0, 2, ((1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'))))
 
 
 class Ta(Element, PeriodVI, GroupV):
