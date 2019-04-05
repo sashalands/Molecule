@@ -56,17 +56,22 @@ class N(Element, PeriodII, GroupXV):
 
     @property
     def valences_exceptions(self):
-        return ((0, 1, ((1, 'O'),)),
-                (0, 1, ((2, 'O'),)),
-                (0, 1, ((2, 'O'), (2, 'O'))),
-                (0, 1, ((2, 'O'), (2, 'O'), (1, 'O'))),
+        return ((1, 1, ((1, 'O'), (3, 'N'))),  # N#N+O-
+                (0, 2, ((2, 'O'),)),  # NO
+                (0, 1, ((2, 'O'), (2, 'O'))),  # NO2
+                (1, 1, ((2, 'O'), (1, 'O'))),  # NO2
+                (1, 1, ((2, 'O'), (1, 'O'), (1, 'O'))),  # N2O5
                 (0, 1, ((1, 'C'), (2, 'C'), (2, 'O'))),
+                (1, 1, ((1, 'C'), (2, 'C'), (1, 'O'))),
                 (0, 1, ((1, 'C'), (2, 'O'), (2, 'O'))),
+                (1, 1, ((1, 'C'), (1, 'O'), (2, 'O'))),
                 (0, 1, ((1, 'C'), (2, 'O'), (1, 'C'), (1, 'C'))),
-                (0, 1, ((1, 'C'), (2, 'O'), (1, 'H'), (1, 'C'))))
+                (1, 1, ((1, 'C'), (1, 'O'), (1, 'C'), (1, 'C'))),
+                (0, 1, ((1, 'C'), (2, 'O'), (1, 'H'), (1, 'C'))),
+                (1, 1, ((1, 'C'), (1, 'O'), (1, 'H'), (1, 'C'))))
 
 
-class Bi(Element, PeriodVI, GroupXVII):
+class Bi(Element, PeriodVI, GroupXV):
     @property
     def atomic_number(self):
         return 83
@@ -101,7 +106,7 @@ class Bi(Element, PeriodVI, GroupXVII):
                 (0, 1, ((2, 'O'), (2, 'O'), (1, 'O'))))
 
 
-class Mc(Element, PeriodVII, GroupXVII):
+class Mc(Element, PeriodVII, GroupXV):
     @property
     def atomic_number(self):
         return 115
