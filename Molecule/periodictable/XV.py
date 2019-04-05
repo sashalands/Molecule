@@ -72,69 +72,7 @@ class N(Element, PeriodII, GroupXV):
                 (1, 1, ((1, 'C'), (1, 'O'), (1, 'H'), (1, 'C'))))
 
 
-class Bi(Element, PeriodVI, GroupXV):
-    @property
-    def atomic_number(self):
-        return 83
 
-    @property
-    def atomic_mass(self):
-        return 208.9804
-
-    @property
-    def electronegativity(self):
-        return 2.02
-
-    @property
-    def common_isotope(self):
-        return 209
-
-    @property
-    def max_isotope(self):
-        return 210
-
-    @property
-    def min_isotope(self):
-        return 205
-
-    @property
-    def common_valences(self):
-        return (3, 1),
-
-    @property
-    def valences_exceptions(self):
-        return ((0, 1, ((2, 'O'),)),
-                (0, 1, ((2, 'O'), (2, 'O'), (1, 'O'))))
-
-
-class Mc(Element, PeriodVII, GroupXV):
-    @property
-    def atomic_number(self):
-        return 115
-
-    @property
-    def atomic_mass(self):
-        return 289
-
-    @property
-    def electronegativity(self):
-        return None
-
-    @property
-    def common_isotope(self):
-        return 289
-
-    @property
-    def max_isotope(self):
-        return 289
-
-    @property
-    def min_isotope(self):
-        return 289
-
-    @property
-    def common_valences(self):
-        return ()
 class P(Element, PeriodIII, GroupXV):
     @property
     def atomic_number(self):
@@ -237,4 +175,68 @@ class Sb(Element, PeriodIII, GroupXV):
         return ()
 
 
-__all__ = ['GroupXV', 'P', 'As', 'Sb']
+class Bi(Element, PeriodVI, GroupXV):
+    @property
+    def atomic_number(self):
+        return 83
+
+    @property
+    def atomic_mass(self):
+        return 208.9804
+
+    @property
+    def electronegativity(self):
+        return 2.02
+
+    @property
+    def common_isotope(self):
+        return 209
+
+    @property
+    def max_isotope(self):
+        return 210
+
+    @property
+    def min_isotope(self):
+        return 205
+
+    @property
+    def common_valences(self):
+        return (3, 1),
+
+    @property
+    def valences_exceptions(self):
+        return ((0, 1, ((2, 'O'),)),
+                (0, 1, ((2, 'O'), (2, 'O'), (1, 'O'))))
+
+
+class Mc(Element, PeriodVII, GroupXV):
+    @property
+    def atomic_number(self):
+        return 115
+
+    @property
+    def atomic_mass(self):
+        return 289
+
+    @property
+    def electronegativity(self):
+        return None
+
+    @property
+    def common_isotope(self):
+        return 289
+
+    @property
+    def max_isotope(self):
+        return 289
+
+    @property
+    def min_isotope(self):
+        return 289
+
+    @property
+    def common_valences(self):
+        return ()
+
+__all__ = ['GroupXV', 'N', 'P', 'As', 'Sb', 'Bi', 'Mc']
