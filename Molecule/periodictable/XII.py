@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 #  Copyright 2019 Ramil Nugmanov <stsouko@live.ru>
-#  Copyright 2019 Tagir Akhmetshin <tagirshin@gmail.com>
+#  Copyright 2019 Dayana Bashirova <dayana.bashirova@yandex.ru>
 #  This file is part of Molecule.
 #
 #  Molecule is free software; you can redistribute it and/or modify
@@ -21,34 +21,34 @@ from .element import Element
 from .periods import *
 
 
-class GroupII:
+class GroupXII:
     pass
 
 
-class Be(Element, PeriodII, GroupII):
+class Zn(Element, PeriodIV, GroupXII):
     @property
     def atomic_number(self):
-        return 4
+        return 30
 
     @property
     def atomic_mass(self):
-        return 9.012182
+        return 65.38
 
     @property
     def electronegativity(self):
-        return 1.57
+        return 1.65
 
     @property
     def common_isotope(self):
-        return 9
+        return 64
 
     @property
     def max_isotope(self):
-        return 10
+        return 72
 
     @property
     def min_isotope(self):
-        return 7
+        return 64
 
     @property
     def common_valences(self):
@@ -56,101 +56,38 @@ class Be(Element, PeriodII, GroupII):
 
     @property
     def valences_exceptions(self):
-        return ()
+        return ((-4, 1, ((1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'))),  # Zn[(OH)6]4-
+                (-2, 1, ((1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'))),  # Zn[(OH)4]2-
+                (-2, 1, ((1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'))),  # Zn[(CN)4]2-
+                (-1, 1, ((1, 'C'), (1, 'C'), (1, 'C'))),  # Zn[(CN)3]-
+                (-2, 1, ((1, 'N'), (1, 'N'), (1, 'N'), (1, 'N'))),  # Zn[(NCS)4]2-
+                (-2, 1, ((1, 'S'), (1, 'S'), (1, 'S'), (1, 'S'))))  # Zn[(SCN)4]2-
 
 
-class Mg(Element, PeriodIII, GroupII):
+class Cd(Element, PeriodV, GroupXII):
     @property
     def atomic_number(self):
-        return 12
-
-    @property
-    def atomic_mass(self):
-        return 24.305
-
-    @property
-    def electronegativity(self):
-        return 1.31
-
-    @property
-    def common_isotope(self):
-        return 24
-
-    @property
-    def max_isotope(self):
-        return 28
-
-    @property
-    def min_isotope(self):
-        return 24
-
-    @property
-    def common_valences(self):
-        return (0, 1), (2, 1)
-
-    @property
-    def valences_exceptions(self):
-        return ()
-
-
-class Ca(Element, PeriodIV, GroupII):
-    @property
-    def atomic_number(self):
-        return 20
-
-    @property
-    def atomic_mass(self):
-        return 40.078
-
-    @property
-    def electronegativity(self):
-        return 1.00
-
-    @property
-    def common_isotope(self):
-        return 40
-
-    @property
-    def max_isotope(self):
         return 48
 
     @property
-    def min_isotope(self):
-        return 40
-
-    @property
-    def common_valences(self):
-        return (0, 1), (2, 1)
-
-    @property
-    def valences_exceptions(self):
-        return ()
-
-
-class Sr(Element, PeriodV, GroupII):
-    @property
-    def atomic_number(self):
-        return 38
-
-    @property
     def atomic_mass(self):
-        return 87.62
+        return 112.411
 
     @property
     def electronegativity(self):
-        return 0.95
+        return 1.69
 
     @property
     def common_isotope(self):
-        return 88
+        return 114
 
     @property
     def max_isotope(self):
-        return 90
+        return 116
 
     @property
     def min_isotope(self):
-        return 82
+        return 106
 
     @property
     def common_valences(self):
@@ -158,33 +95,38 @@ class Sr(Element, PeriodV, GroupII):
 
     @property
     def valences_exceptions(self):
-        return ()
+        return ((-4, 1, ((1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'))), # Cd[(OH)6]4-
+                (-2, 1, ((1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'))),  # Cd[(OH)4]2-
+                (-2, 1, ((1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'))),  # Cd[(CN)4]2-
+                (-1, 1, ((1, 'C'), (1, 'C'), (1, 'C'))),   # Cd[(CN)3]-
+                (-2, 1, ((1, 'N'), (1, 'N'), (1, 'N'), (1, 'N'))),  # Cd[(NCS)4]2-
+                (-2, 1, ((1, 'S'), (1, 'S'), (1, 'S'), (1, 'S'))))  # Cd[(SCN)4]2-
 
 
-class Ba(Element, PeriodVI, GroupII):
+class Hg(Element, PeriodVI, GroupXII):
     @property
     def atomic_number(self):
-        return 56
+        return 80
 
     @property
     def atomic_mass(self):
-        return 137.327
+        return 200.592
 
     @property
     def electronegativity(self):
-        return 0.89
+        return 2.00
 
     @property
     def common_isotope(self):
-        return 138
+        return 200
 
     @property
     def max_isotope(self):
-        return 138
+        return 204
 
     @property
     def min_isotope(self):
-        return 130
+        return 194
 
     @property
     def common_valences(self):
@@ -192,41 +134,47 @@ class Ba(Element, PeriodVI, GroupII):
 
     @property
     def valences_exceptions(self):
-        return ()
+        return ((-2, 1, ((1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'))),  # Hg[(CN)4]2-
+                (-1, 1, ((1, 'C'), (1, 'C'), (1, 'C'))),  # Hg[(CN)3]-
+                (-2, 1, ((1, 'N'), (1, 'N'), (1, 'N'), (1, 'N'))),  # Hg[(NCS)4]2-
+                (-2, 1, ((1, 'S'), (1, 'S'), (1, 'S'), (1, 'S'))),  # Hg[(SCN)4]2-
+                (0, 2, ((1, 'O'),)),  # Hg2O
+                (0, 2, ((1, 'Cl'),)),  # HgCl
+                (0, 2, ((1, 'Br'),)))  #HgBr
 
 
-class Ra(Element, PeriodVII, GroupII):
+class Cn(Element, PeriodVII, GroupXII):
     @property
     def atomic_number(self):
-        return 88
+        return 112
 
     @property
     def atomic_mass(self):
-        return 226.0254
+        return 285
 
     @property
     def electronegativity(self):
-        return 0.9
+        return None
 
     @property
     def common_isotope(self):
-        return 226
+        return 285
 
     @property
     def max_isotope(self):
-        return 228
+        return 285
 
     @property
     def min_isotope(self):
-        return 223
+        return 285
 
     @property
     def common_valences(self):
-        return (0, 1), (2, 1)
+        return ()
 
     @property
     def valences_exceptions(self):
         return ()
 
 
-__all__ = ['GroupII', 'Be', 'Mg', 'Ca', 'Sr', 'Ba', 'Ra']
+__all__ = ['GroupXII', 'Zn', 'Cd', 'Hg', 'Cn']

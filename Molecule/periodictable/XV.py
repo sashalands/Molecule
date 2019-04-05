@@ -2,6 +2,7 @@
 #
 #  Copyright 2019 Ramil Nugmanov <stsouko@live.ru>
 #  Copyright 2019 Alexander Nikanshin <17071996sasha@gmail.com>
+#  Copyright 2019 Tagir Akhmetshin <tagirshin@gmail.com>
 #  This file is part of Molecule.
 #
 #  Molecule is free software; you can redistribute it and/or modify
@@ -134,10 +135,106 @@ class Mc(Element, PeriodVII, GroupXV):
     @property
     def common_valences(self):
         return ()
+class P(Element, PeriodIII, GroupXV):
+    @property
+    def atomic_number(self):
+        return 15
+
+    @property
+    def atomic_mass(self):
+        return 31
+
+    @property
+    def electronegativity(self):
+        return 2.19
+
+    @property
+    def common_isotope(self):
+        return 31
+
+    @property
+    def max_isotope(self):
+        return 33
+
+    @property
+    def min_isotope(self):
+        return 31
+
+    @property
+    def common_valences(self):
+        return (0, 1), (3, 1), (5, 1)
 
     @property
     def valences_exceptions(self):
         return ()
 
 
-__all__ = ['GroupXV', 'N', 'Bi', 'Mc']
+class As(Element, PeriodIII, GroupXV):
+    @property
+    def atomic_number(self):
+        return 33
+
+    @property
+    def atomic_mass(self):
+        return 75
+
+    @property
+    def electronegativity(self):
+        return 2.18
+
+    @property
+    def common_isotope(self):
+        return 75
+
+    @property
+    def max_isotope(self):
+        return 77
+
+    @property
+    def min_isotope(self):
+        return 73
+
+    @property
+    def common_valences(self):
+        return (0, 1), (3, 1), (5, 1)
+
+    @property
+    def valences_exceptions(self):
+        return ()
+
+
+class Sb(Element, PeriodIII, GroupXV):
+    @property
+    def atomic_number(self):
+        return 51
+
+    @property
+    def atomic_mass(self):
+        return 123
+
+    @property
+    def electronegativity(self):
+        return 2.05
+
+    @property
+    def common_isotope(self):
+        return 123
+
+    @property
+    def max_isotope(self):
+        return 127
+
+    @property
+    def min_isotope(self):
+        return 119
+
+    @property
+    def common_valences(self):
+        return (0, 1), (3, 1), (5, 1)
+
+    @property
+    def valences_exceptions(self):
+        return ()
+
+
+__all__ = ['GroupXV', 'P', 'As', 'Sb']

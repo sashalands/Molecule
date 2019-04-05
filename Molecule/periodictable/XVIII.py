@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 #  Copyright 2019 Ramil Nugmanov <stsouko@live.ru>
+#  Copyright 2019 Tagir Akhmetshin <tagirshin@gmail.com>
 #  This file is part of Molecule.
 #
 #  Molecule is free software; you can redistribute it and/or modify
@@ -54,7 +55,7 @@ class He(Element, PeriodI, GroupXVIII):
         return (0, 1),
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
@@ -88,7 +89,7 @@ class Ne(Element, PeriodII, GroupXVIII):
         return (0, 1),
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
@@ -122,7 +123,7 @@ class Ar(Element, PeriodIII, GroupXVIII):
         return (0, 1),
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
@@ -156,7 +157,7 @@ class Kr(Element, PeriodIV, GroupXVIII):
         return (0, 1),
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
@@ -190,8 +191,8 @@ class Xe(Element, PeriodV, GroupXVIII):
         return (0, 1),
 
     @property
-    def valences_exeptions(self):
-        return ((0, 1, ((1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'), (2, 'O')), (2, 'O')),
+    def valences_exceptions(self):
+        return ((0, 1, ((1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'), (2, 'O'), (2, 'O'))),
                 (0, 1, ((2, 'O'), (2, 'O'), (2, 'O'))),
                 (0, 1, ((1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'))),
                 (0, 1, ((1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'))),
@@ -229,7 +230,7 @@ class Rn(Element, PeriodVI, GroupXVIII):
         return (0, 1),
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
@@ -263,7 +264,7 @@ class Og(Element, PeriodVII, GroupXVIII):
         return (0, 1),
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 

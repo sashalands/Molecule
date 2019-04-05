@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 #  Copyright 2019 Ramil Nugmanov <stsouko@live.ru>
+#  Copyright 2019 Tagir Akhmetshin <tagirshin@gmail.com>
 #  This file is part of Molecule.
 #
 #  Molecule is free software; you can redistribute it and/or modify
@@ -16,21 +17,12 @@
 #  You should have received a copy of the GNU Lesser General Public License
 #  along with this program; if not, see <https://www.gnu.org/licenses/>.
 #
+from .element import Element
 from .periods import *
-from .I import *
-from .II import *
-from .III import *
-from .IV import *
-from .V import *
-from .VI import *
-from .VIII import *
-from .IX import *
-from .X import *
-from .XI import *
-from .XII import *
-from .XIII import *
-from .XIV import *
-from .XV import *
-from .XVI import *
-from .XVII import *
-from .XVIII import *
+
+
+class GroupIV:
+    pass
+
+
+__all__ = ['GroupIV']

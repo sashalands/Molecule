@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 #  Copyright 2019 Ramil Nugmanov <stsouko@live.ru>
+#  Copyright 2019 Alexander Nikanshin <17071996sasha@gmail.com>
 #  Copyright 2019 Tagir Akhmetshin <tagirshin@gmail.com>
 #  This file is part of Molecule.
 #
@@ -21,212 +22,160 @@ from .element import Element
 from .periods import *
 
 
-class GroupII:
+class GroupXI:
     pass
 
 
-class Be(Element, PeriodII, GroupII):
+class Cu(Element, PeriodIV, GroupXI):
     @property
     def atomic_number(self):
-        return 4
+        return 29
 
     @property
     def atomic_mass(self):
-        return 9.012182
+        return 63.546
 
     @property
     def electronegativity(self):
-        return 1.57
+        return 1.9
 
     @property
     def common_isotope(self):
-        return 9
+        return 63
 
     @property
     def max_isotope(self):
-        return 10
+        return 65
 
     @property
     def min_isotope(self):
-        return 7
+        return 63
 
     @property
     def common_valences(self):
-        return (0, 1), (2, 1)
+        return (1, 1), (2, 1)
+
+    @property
+    def valences_exceptions(self):
+        return ((-1, 1, ((1, 'Cl'), (1, 'Cl'))),  # CuCl2^-
+                (-3, 1, ((1, 'S'), (1, 'S'))),  # CuS2^3- - это характерный комплекс для одновалентной меди
+                (-2, 1, ((1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'))),  # Cu(OH)4^2-
+                (-4, 1, ((1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'))),  # Cu(OH)6^4-
+                (-2, 1, ((1, 'Cl'), (1, 'Cl'), (1, 'Cl'), (1, 'Cl'))),  # CuCl4^2-
+                (-2, 1, ((1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'))))  # Cu(CN)4^2-
+
+
+class Ag(Element, PeriodV, GroupXI):
+    @property
+    def atomic_number(self):
+        return 47
+
+    @property
+    def atomic_mass(self):
+        return 107.8682
+
+    @property
+    def electronegativity(self):
+        return 1.93
+
+    @property
+    def common_isotope(self):
+        return 107
+
+    @property
+    def max_isotope(self):
+        return 106
+
+    @property
+    def min_isotope(self):
+        return 109
+
+    @property
+    def common_valences(self):
+        return (1, 1),
+
+    @property
+    def valences_exceptions(self):
+        return ((-1, 1, ((1, 'Cl'), (1, 'Cl'))),  # AgCl2^1-
+                (-1, 1, ((1, 'O'), (1, 'O'))),  # Ag(OH)2^1-
+                (-1, 1, ((1, 'S'), (1, 'S'))),  # AgS2^1-
+                (-1, 1, ((1, 'C'), (1, 'C'))))  # Ag(CN)2^1-
+
+
+class Au(Element, PeriodVI, GroupXI):
+    @property
+    def atomic_number(self):
+        return 79
+
+    @property
+    def atomic_mass(self):
+        return 196.966569
+
+    @property
+    def electronegativity(self):
+        return 2.64
+
+    @property
+    def common_isotope(self):
+        return 197
+
+    @property
+    def max_isotope(self):
+        return 199
+
+    @property
+    def min_isotope(self):
+        return 195
+
+    @property
+    def common_valences(self):
+        return (1, 1),
+
+    @property
+    def valences_exceptions(self):
+        return ((-1, 1, ((1, 'Cl'), (1, 'Cl'))),  # AuCl2^1-
+                (-1, 1, ((1, 'S'), (1, 'S'))),  # AuS2^1-
+                (-1, 1, ((1, 'C'), (1, 'C'))),  # Au(CN)^1-
+                (3, 1, ((1, 'N'), (1, 'N'), (1, 'N'), (1, 'N'))),  # Au(NH3)4^3+
+                (-1, 1, ((1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'))),  # Au(OH)4^1-
+                (-1, 1, ((1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'))),  # Au(CN)4^1-
+                (-2, 1, ((1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'))),  # Au(CN)5^2-
+                (-3, 1, ((1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'), (1, 'C'))),  # Au(CN)6^3-
+                (-1, 1, ((1, 'Cl'), (1, 'Cl'), (1, 'Cl'), (1, 'Cl'))))  # AuCl4^1-
+
+
+class Rg(Element, PeriodVII, GroupXI):
+    @property
+    def atomic_number(self):
+        return 111
+
+    @property
+    def atomic_mass(self):
+        return 281
+
+    @property
+    def electronegativity(self):
+        return None
+
+    @property
+    def common_isotope(self):
+        return 281
+
+    @property
+    def max_isotope(self):
+        return 281
+
+    @property
+    def min_isotope(self):
+        return 281
+
+    @property
+    def common_valences(self):
+        return ()
 
     @property
     def valences_exceptions(self):
         return ()
 
 
-class Mg(Element, PeriodIII, GroupII):
-    @property
-    def atomic_number(self):
-        return 12
-
-    @property
-    def atomic_mass(self):
-        return 24.305
-
-    @property
-    def electronegativity(self):
-        return 1.31
-
-    @property
-    def common_isotope(self):
-        return 24
-
-    @property
-    def max_isotope(self):
-        return 28
-
-    @property
-    def min_isotope(self):
-        return 24
-
-    @property
-    def common_valences(self):
-        return (0, 1), (2, 1)
-
-    @property
-    def valences_exceptions(self):
-        return ()
-
-
-class Ca(Element, PeriodIV, GroupII):
-    @property
-    def atomic_number(self):
-        return 20
-
-    @property
-    def atomic_mass(self):
-        return 40.078
-
-    @property
-    def electronegativity(self):
-        return 1.00
-
-    @property
-    def common_isotope(self):
-        return 40
-
-    @property
-    def max_isotope(self):
-        return 48
-
-    @property
-    def min_isotope(self):
-        return 40
-
-    @property
-    def common_valences(self):
-        return (0, 1), (2, 1)
-
-    @property
-    def valences_exceptions(self):
-        return ()
-
-
-class Sr(Element, PeriodV, GroupII):
-    @property
-    def atomic_number(self):
-        return 38
-
-    @property
-    def atomic_mass(self):
-        return 87.62
-
-    @property
-    def electronegativity(self):
-        return 0.95
-
-    @property
-    def common_isotope(self):
-        return 88
-
-    @property
-    def max_isotope(self):
-        return 90
-
-    @property
-    def min_isotope(self):
-        return 82
-
-    @property
-    def common_valences(self):
-        return (0, 1), (2, 1)
-
-    @property
-    def valences_exceptions(self):
-        return ()
-
-
-class Ba(Element, PeriodVI, GroupII):
-    @property
-    def atomic_number(self):
-        return 56
-
-    @property
-    def atomic_mass(self):
-        return 137.327
-
-    @property
-    def electronegativity(self):
-        return 0.89
-
-    @property
-    def common_isotope(self):
-        return 138
-
-    @property
-    def max_isotope(self):
-        return 138
-
-    @property
-    def min_isotope(self):
-        return 130
-
-    @property
-    def common_valences(self):
-        return (0, 1), (2, 1)
-
-    @property
-    def valences_exceptions(self):
-        return ()
-
-
-class Ra(Element, PeriodVII, GroupII):
-    @property
-    def atomic_number(self):
-        return 88
-
-    @property
-    def atomic_mass(self):
-        return 226.0254
-
-    @property
-    def electronegativity(self):
-        return 0.9
-
-    @property
-    def common_isotope(self):
-        return 226
-
-    @property
-    def max_isotope(self):
-        return 228
-
-    @property
-    def min_isotope(self):
-        return 223
-
-    @property
-    def common_valences(self):
-        return (0, 1), (2, 1)
-
-    @property
-    def valences_exceptions(self):
-        return ()
-
-
-__all__ = ['GroupII', 'Be', 'Mg', 'Ca', 'Sr', 'Ba', 'Ra']
+__all__ = ['GroupXI', 'Cu', 'Ag', 'Au', 'Rg']
